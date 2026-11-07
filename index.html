@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GameZone X — discover games, save favorites, and play a mini-game." />
+  <title>GameZone X | Gaming Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="GameZone X home"><span class="brand-mark">G</span> GameZone <span class="brand-x">X</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="#home">Home</a>
+      <a href="#library">Games</a>
+      <a href="#minigame">Mini-game</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <a class="top-cta" href="#library">Explore Games <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse-dot"></span> YOUR NEXT LEVEL STARTS HERE</p>
+        <h1>ENTER THE<br /><span>GAMEVERSE.</span></h1>
+        <p class="hero-text">Discover your next obsession. Find exciting games, build your favorites list, and take a quick break with our mini-game.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#library">Explore Games <span>→</span></a>
+          <a class="button button-ghost" href="#minigame">Play Mini-game <span>▸</span></a>
+        </div>
+        <div class="hero-stats">
+          <div><strong id="gameCountStat">08</strong><span>Featured games</span></div>
+          <div><strong id="favoriteCountStat">00</strong><span>Your favorites</span></div>
+          <div><strong>24/7</strong><span>Game vibes</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Gaming illustration">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-controller"><span class="controller-dpad">✣</span><span class="controller-dot dot-a">●</span><span class="controller-dot dot-b">●</span><span class="controller-stick">◉</span></div>
+        <div class="floating-tag tag-top">⚡ LEVEL UP</div>
+        <div class="floating-tag tag-bottom">PLAYER 1 READY</div>
+        <div class="pixel pixel-one"></div><div class="pixel pixel-two"></div><div class="pixel pixel-three"></div>
+      </div>
+    </section>
+
+    <section class="section-wrap library-section" id="library">
+      <div class="section-heading">
+        <div><p class="eyebrow">PICK YOUR PLAYSTYLE</p><h2>Explore <span>Games</span></h2></div>
+        <p class="section-note">A little something for every kind of player.</p>
+      </div>
+      <div class="toolbar">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search games..." aria-label="Search games" /></label>
+        <div class="filters" role="group" aria-label="Filter games by genre">
+          <button class="filter-chip selected" data-filter="All">All games</button>
+          <button class="filter-chip" data-filter="Action">Action</button>
+          <button class="filter-chip" data-filter="Racing">Racing</button>
+          <button class="filter-chip" data-filter="Adventure">Adventure</button>
+          <button class="filter-chip" data-filter="Puzzle">Puzzle</button>
+        </div>
+      </div>
+      <div class="game-grid" id="gameGrid" aria-live="polite"></div>
+      <p class="empty-state hidden" id="emptyState">No games found. Try another search or category.</p>
+    </section>
+
+    <section class="mini-section" id="minigame">
+      <div class="mini-card section-wrap">
+        <div class="mini-copy">
+          <p class="eyebrow">QUICK CHALLENGE</p>
+          <h2>Think fast.<br /><span>Guess the code.</span></h2>
+          <p>I'm thinking of a number from 1 to 10. Can you guess it in three tries?</p>
+          <div class="guess-controls">
+            <input id="guessInput" type="number" min="1" max="10" placeholder="1–10" aria-label="Your number guess" />
+            <button class="button button-primary" id="guessButton">Guess it!</button>
+          </div>
+          <p class="guess-message" id="guessMessage" aria-live="polite">Ready, player? Make your first guess.</p>
+          <button class="text-button" id="resetGame">↻ Restart mini-game</button>
+        </div>
+        <div class="mini-visual" aria-hidden="true"><div class="mini-ring"></div><div class="question-mark">?</div><div class="mini-spark spark-one">✦</div><div class="mini-spark spark-two">✧</div><div class="mini-badge">BONUS<br />ROUND</div></div>
+      </div>
+    </section>
+
+    <section class="about-section section-wrap" id="about">
+      <div><p class="eyebrow">MADE FOR PLAYERS</p><h2>Good games.<br /><span>Great vibes.</span></h2></div>
+      <p>GameZone X is a front-end demo built with HTML, CSS, and JavaScript. Explore the sample library, save favorites on this device, and try the built-in mini-game.</p>
+      <a class="button button-ghost" href="#home">Back to top ↑</a>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand" href="#home"><span class="brand-mark">G</span> GameZone <span class="brand-x">X</span></a><p>© <span id="year"></span> GameZone X · Play your way.</p><a href="#home">Back to top ↑</a></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

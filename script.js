@@ -2,7 +2,7 @@ let games = [];
 
 async function loadGames() {
   try {
-    const response = await fetch("http://localhost:5000/api/games");
+    const response = await fetch("https://gamezone-x-backend.onrender.com/api/games");
 
     if (!response.ok) {
       throw new Error(`Server returned ${response.status}`);
